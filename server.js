@@ -19,7 +19,7 @@ app.listen(port, function(){
 
 var middleware = {
 	requireAuthentication: function(req, res, next){
-		console.log('hit');
+		console.log('hit!');
 		next();
 	},
 	logger: function(req, res, next){
