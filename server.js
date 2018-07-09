@@ -17,16 +17,7 @@ app.listen(port, function(){
 	console.log('Express Server running on port ' + port);
 }); */
 
-var middleware = {
-	requireAuthentication: function(req, res, next){
-		console.log('hit!');
-		next();
-	},
-	logger: function(req, res, next){
-		console.log('Request @ ' + new Date().toString() + ': '+ req.method + ' ' + req.originalUrl);
-		next();
-	}
-};
+var middleware = require('./middleware.js');
 
 // app.use(middleware.requireAuthentication);
 	app.use(middleware.logger);
