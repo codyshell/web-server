@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var port = process.env.port || 3000;
+var PORT = process.env.PORT || 3000;
 // app.get('/', function(req, res){
 	// res.send('Hello Express');
 // });
@@ -13,8 +13,8 @@ app.get('/about', function(req, res){
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(port, function(){
-	console.log('Express Server running on port ' + port);
+app.listen(PORT, function(){
+	console.log('Express Server running on PORT ' + PORT);
 }); */
 
 var middleware = require('./middleware.js');
@@ -28,6 +28,6 @@ app.get('/about', middleware.requireAuthentication, function(req, res){
 
 app.use(express.static(__dirname + '/public'));
 
-app.listen(port, function(){
-	console.log('Express Server running on port ' + port);
+app.listen(PORT, function(){
+	console.log('Express Server running on PORT ' + PORT);
 });
